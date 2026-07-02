@@ -27,7 +27,7 @@
     line-height:1.5;
   }
   a{color:var(--navy);}
-
+ 
   /* ---- Sticky header / progress ---- */
   .topbar{
     position:sticky; top:0; z-index:50;
@@ -45,7 +45,7 @@
   .progress-track{height:6px; border-radius:6px; background:rgba(255,255,255,.18); overflow:hidden;}
   .progress-fill{height:100%; width:0%; background:var(--accent); transition:width .25s ease; border-radius:6px;}
   .progress-label{font-size:11.5px; color:#C9D2E0; display:flex; justify-content:space-between;}
-
+ 
   /* ---- Layout ---- */
   .wrap{max-width:760px; margin:0 auto; padding:24px 20px 80px;}
   .intro{font-size:14.5px; color:var(--muted); margin:0 0 22px;}
@@ -65,19 +65,19 @@
   }
   .section-title{font-size:15.5px; font-weight:700; margin:0;}
   .section-sub{font-size:12.5px; color:var(--muted); margin:2px 0 0;}
-
+ 
   .field{margin-bottom:20px;}
   .field-label{font-weight:600; font-size:14px; margin-bottom:2px; display:block;}
   .field-label .req{color:var(--accent); margin-left:2px;}
   .field-help{font-size:12.5px; color:var(--muted); margin:2px 0 8px;}
-
+ 
   input[type="text"], input[type="date"], textarea, select{
     width:100%; padding:10px 12px; border:1px solid var(--border); border-radius:8px;
     font-size:14px; font-family:inherit; color:var(--text); background:#fff;
   }
   textarea{resize:vertical; min-height:70px;}
   input:focus, textarea:focus, select:focus{outline:2px solid var(--navy); outline-offset:1px; border-color:var(--navy);}
-
+ 
   /* Choice groups (radio/checkbox pills) */
   .choice-group{display:flex; flex-wrap:wrap; gap:8px; margin-top:6px;}
   .choice-group.scale-5{display:grid; grid-template-columns:repeat(5,1fr); gap:6px;}
@@ -92,18 +92,18 @@
   }
   .choice-pill input:focus-visible + label{outline:2px solid var(--accent); outline-offset:2px;}
   .scale-endcap{font-size:10.5px; color:var(--muted); display:flex; justify-content:space-between; margin-top:4px;}
-
+ 
   .checkbox-row{display:flex; align-items:flex-start; gap:8px;}
   .checkbox-row input{margin-top:3px;}
   .checkbox-row label{font-size:13.5px; color:var(--text);}
-
+ 
   .conditional{
     border-left:3px solid var(--accent-soft); padding-left:14px; margin-top:-4px;
   }
   .conditional[hidden]{display:none;}
-
+ 
   .footer-note{font-size:12px; color:var(--muted); text-align:center; margin:6px 0 26px;}
-
+ 
   .submit-bar{
     display:flex; flex-direction:column; align-items:center; gap:10px; padding:10px 0 0;
   }
@@ -121,7 +121,7 @@
   .error-summary.show{display:block;}
   .field.has-error input[type="text"], .field.has-error textarea, .field.has-error select{border-color:var(--accent);}
   .field.has-error .choice-pill label{border-color:var(--accent);}
-
+ 
   /* Thank-you screen */
   #thankyou{display:none; text-align:center; padding:70px 20px;}
   #thankyou.show{display:block;}
@@ -131,7 +131,7 @@
   }
   #thankyou h2{margin:0 0 8px;}
   #thankyou p{color:var(--muted); max-width:420px; margin:0 auto;}
-
+ 
   @media (max-width:480px){
     .choice-group.scale-5{grid-template-columns:repeat(5,1fr); gap:4px;}
     .choice-pill label{font-size:11px; padding:8px 3px;}
@@ -140,7 +140,7 @@
 </style>
 </head>
 <body>
-
+ 
 <div class="topbar">
   <div class="topbar-inner">
     <div class="brand-row">
@@ -151,27 +151,27 @@
     <div class="progress-label"><span id="progressText">0% complete</span><span>Section <span id="sectionInView">1</span> of 6</span></div>
   </div>
 </div>
-
+ 
 <div class="wrap">
   <p class="intro">Thank you for taking a moment to complete this weekly pulse survey. It takes about 3 minutes and helps us catch issues early — every response goes straight to the Training Operations team.</p>
-
+ 
   <div class="error-summary" id="errorSummary">Please fill in the required fields highlighted below before submitting.</div>
-
+ 
   <form id="feedbackForm" novalidate>
-
+ 
     <!-- SECTION 1 -->
     <div class="section" data-section="1">
       <div class="section-head">
         <div class="section-num">1</div>
         <div><p class="section-title">Check-in Info</p><p class="section-sub">Tell us where and when this session happened</p></div>
       </div>
-
+ 
       <div class="field" data-required="true">
         <label class="field-label" for="weekEnding">Week Ending<span class="req">*</span></label>
         <p class="field-help">Select the date this week's session ends.</p>
         <input type="date" id="weekEnding" name="weekEnding" required>
       </div>
-
+ 
       <div class="field" data-required="true">
         <label class="field-label" for="courseName">Course Name<span class="req">*</span></label>
         <p class="field-help">Choose the course you attended this week.</p>
@@ -230,7 +230,7 @@
           </optgroup>
         </select>
       </div>
-
+ 
       <div class="field" data-required="true">
         <label class="field-label" for="center">Center<span class="req">*</span></label>
         <p class="field-help">Choose the center the training was held at.</p>
@@ -241,13 +241,13 @@
           <option>Abeokuta</option><option>Akure 1</option><option>Akure 2</option><option>Ado-Ekiti</option><option>Akute</option>
         </select>
       </div>
-
+ 
       <div class="field">
         <label class="field-label" for="studentName">Student ID or Name</label>
         <p class="field-help">Leave blank to stay anonymous.</p>
         <input type="text" id="studentName" name="studentName">
       </div>
-
+ 
       <div class="field">
         <div class="checkbox-row">
           <input type="checkbox" id="anonymous" name="anonymous">
@@ -255,14 +255,14 @@
         </div>
       </div>
     </div>
-
+ 
     <!-- SECTION 2 -->
     <div class="section" data-section="2">
       <div class="section-head">
         <div class="section-num">2</div>
         <div><p class="section-title">Class Delivery This Week</p></div>
       </div>
-
+ 
       <div class="field" data-required="true">
         <label class="field-label">The pace of this week's class was appropriate for me<span class="req">*</span></label>
         <div class="choice-group scale-5" data-name="pace">
@@ -273,7 +273,7 @@
           <div class="choice-pill"><input type="radio" name="pace" id="pace5" value="5"><label for="pace5">Too fast</label></div>
         </div>
       </div>
-
+ 
       <div class="field" data-required="true">
         <label class="field-label">The trainer explained this week's concepts clearly<span class="req">*</span></label>
         <div class="choice-group scale-5" data-name="clarity">
@@ -284,7 +284,7 @@
           <div class="choice-pill"><input type="radio" name="clarity" id="clarity5" value="5"><label for="clarity5">Strongly Agree</label></div>
         </div>
       </div>
-
+ 
       <div class="field" data-required="true">
         <label class="field-label">I was able to keep up with the material taught this week<span class="req">*</span></label>
         <div class="choice-group scale-5" data-name="keepUp">
@@ -295,7 +295,7 @@
           <div class="choice-pill"><input type="radio" name="keepUp" id="keepUp5" value="5"><label for="keepUp5">Strongly Agree</label></div>
         </div>
       </div>
-
+ 
       <div class="field" data-required="true">
         <label class="field-label" for="questionsAnswered">My questions were answered adequately this week<span class="req">*</span></label>
         <p class="field-help">Select the option that best matches your experience.</p>
@@ -305,14 +305,14 @@
         </select>
       </div>
     </div>
-
+ 
     <!-- SECTION 3 -->
     <div class="section" data-section="3">
       <div class="section-head">
         <div class="section-num">3</div>
         <div><p class="section-title">Course Material This Week</p></div>
       </div>
-
+ 
       <div class="field" data-required="true">
         <label class="field-label">This week's materials (slides, notes, exercises) were clear and useful<span class="req">*</span></label>
         <div class="choice-group scale-5" data-name="materialsClear">
@@ -323,7 +323,7 @@
           <div class="choice-pill"><input type="radio" name="materialsClear" id="mc5" value="5"><label for="mc5">Strongly Agree</label></div>
         </div>
       </div>
-
+ 
       <div class="field" data-required="true">
         <label class="field-label" for="materialsOnTime">Materials were available on time<span class="req">*</span></label>
         <p class="field-help">Think about when you received/accessed the materials for this week.</p>
@@ -332,7 +332,7 @@
           <option>Yes, on time</option><option>Late</option><option>Not provided</option>
         </select>
       </div>
-
+ 
       <div class="field" data-required="true">
         <label class="field-label" for="exercisesMatched">This week's exercises/assignments matched what was actually taught<span class="req">*</span></label>
         <select id="exercisesMatched" name="exercisesMatched" required>
@@ -341,14 +341,14 @@
         </select>
       </div>
     </div>
-
+ 
     <!-- SECTION 4 -->
     <div class="section" data-section="4">
       <div class="section-head">
         <div class="section-num">4</div>
         <div><p class="section-title">Hands-On / Lab Experience This Week</p><p class="section-sub">Optional — skip if this week had no practical component</p></div>
       </div>
-
+ 
       <div class="field">
         <label class="field-label">Lab / hands-on time this week was sufficient</label>
         <div class="choice-group scale-5" data-name="labSufficient">
@@ -359,7 +359,7 @@
           <div class="choice-pill"><input type="radio" name="labSufficient" id="ls5" value="5"><label for="ls5">Strongly Agree</label></div>
         </div>
       </div>
-
+ 
       <div class="field">
         <label class="field-label" for="toolsWorked">The software/tools/equipment worked as expected this week</label>
         <select id="toolsWorked" name="toolsWorked">
@@ -367,7 +367,7 @@
           <option>Yes, no issues</option><option>Minor issues</option><option>Major issues</option>
         </select>
       </div>
-
+ 
       <div class="field">
         <label class="field-label" for="couldComplete">I could complete this week's practical exercises with the support given</label>
         <select id="couldComplete" name="couldComplete">
@@ -376,14 +376,14 @@
         </select>
       </div>
     </div>
-
+ 
     <!-- SECTION 5 -->
     <div class="section" data-section="5">
       <div class="section-head">
         <div class="section-num">5</div>
         <div><p class="section-title">Issues & Complaints</p></div>
       </div>
-
+ 
       <div class="field" data-required="true">
         <label class="field-label">Did you experience any issue or concern this week?<span class="req">*</span></label>
         <p class="field-help">If you select Yes, please add details below.</p>
@@ -392,7 +392,7 @@
           <div class="choice-pill"><input type="radio" name="hadIssue" id="issueNo" value="No"><label for="issueNo">No</label></div>
         </div>
       </div>
-
+ 
       <div class="conditional" id="issueDetails" hidden>
         <div class="field">
           <label class="field-label">What is this issue mainly about?</label>
@@ -409,7 +409,7 @@
             <div class="choice-pill"><input type="checkbox" name="issueCategories" id="ic9" value="Peer/Classroom Environment"><label for="ic9">Peer/Classroom Environment</label></div>
           </div>
         </div>
-
+ 
         <div class="field">
           <label class="field-label">How would you rate the severity of this issue?</label>
           <p class="field-help">Choose the option that best reflects how disruptive the issue was.</p>
@@ -420,13 +420,13 @@
             <div class="choice-pill"><input type="radio" name="severity" id="sevUrgent" value="Urgent"><label for="sevUrgent">Urgent</label></div>
           </div>
         </div>
-
+ 
         <div class="field">
           <label class="field-label" for="issueDescription">Please describe the issue</label>
           <p class="field-help">Briefly describe what happened and (if possible) when it occurred.</p>
           <textarea id="issueDescription" name="issueDescription"></textarea>
         </div>
-
+ 
         <div class="field">
           <label class="field-label">Has this issue come up in a previous week too?</label>
           <div class="choice-group" style="grid-template-columns:repeat(3,1fr);">
@@ -437,14 +437,14 @@
         </div>
       </div>
     </div>
-
+ 
     <!-- SECTION 6 -->
     <div class="section" data-section="6">
       <div class="section-head">
         <div class="section-num">6</div>
         <div><p class="section-title">Overall Weekly Pulse</p></div>
       </div>
-
+ 
       <div class="field" data-required="true">
         <label class="field-label">Overall, how was this week for you?<span class="req">*</span></label>
         <div class="choice-group scale-5" data-name="overallSatisfaction">
@@ -455,7 +455,7 @@
           <div class="choice-pill"><input type="radio" name="overallSatisfaction" id="os5" value="5"><label for="os5">Very Satisfied</label></div>
         </div>
       </div>
-
+ 
       <div class="field" data-required="true">
         <label class="field-label">How confident do you feel about keeping up with the rest of the course?<span class="req">*</span></label>
         <div class="choice-group scale-5" data-name="confidence">
@@ -466,31 +466,35 @@
           <div class="choice-pill"><input type="radio" name="confidence" id="conf5" value="5"><label for="conf5">Very Confident</label></div>
         </div>
       </div>
-
+ 
       <div class="field">
         <label class="field-label" for="additionalComments">Anything else you'd like the training team to know?</label>
         <textarea id="additionalComments" name="additionalComments"></textarea>
       </div>
     </div>
-
+ 
     <div class="submit-bar">
       <button type="submit" class="submit-btn" id="submitBtn">Submit Feedback</button>
       <p class="footer-note">Your response goes directly to the Training Operations team at New Horizons Computer Learning Centers.</p>
     </div>
   </form>
-
+ 
   <div id="thankyou">
     <div class="check">✓</div>
     <h2>Thank you for your feedback!</h2>
     <p>It helps New Horizons Computer Learning Centers improve the training experience every week.</p>
   </div>
 </div>
-
+ 
+<!-- Hidden iframe + form used to POST to Google Apps Script without a CORS round trip -->
+<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+<form id="gsForm" method="POST" target="hidden_iframe" style="display:none;"></form>
+ 
 <script>
-  // This page is served directly by Apps Script (HtmlService), so submissions
-  // go straight to the submitFeedback() server function via google.script.run —
-  // no separate URL to configure, no CORS workaround needed.
-
+  // ======= CONFIGURE THIS: paste your deployed Apps Script Web App URL here =======
+  const SCRIPT_URL = "https://script.google.com/a/macros/newhorizonsnigeria.com/s/AKfycbxn3_tKx3x12g-FoqRLYI_g6rHvf0wlA9eDPvgNP3wtgbZzSeXruiQdEHQcdNB21gXk1Q/exec";
+  // ===================================================================================
+ 
   const form = document.getElementById('feedbackForm');
   const issueYes = document.getElementById('issueYes');
   const issueNo = document.getElementById('issueNo');
@@ -500,14 +504,14 @@
   const progressText = document.getElementById('progressText');
   const sectionInView = document.getElementById('sectionInView');
   const submitBtn = document.getElementById('submitBtn');
-
+ 
   function toggleIssueDetails() {
     const show = issueYes.checked;
     issueDetails.hidden = !show;
   }
   issueYes.addEventListener('change', toggleIssueDetails);
   issueNo.addEventListener('change', toggleIssueDetails);
-
+ 
   // ---- Live progress across required fields ----
   function getRequiredFields() {
     return Array.from(form.querySelectorAll('[data-required="true"]'));
@@ -531,7 +535,7 @@
   form.addEventListener('input', updateProgress);
   form.addEventListener('change', updateProgress);
   updateProgress();
-
+ 
   // ---- Section-in-view indicator ----
   const sections = Array.from(document.querySelectorAll('.section'));
   const observer = new IntersectionObserver((entries) => {
@@ -542,33 +546,42 @@
     });
   }, { rootMargin: '-40% 0px -50% 0px' });
   sections.forEach(s => observer.observe(s));
-
+ 
   // ---- Validation + submit ----
   form.addEventListener('submit', function(e) {
     e.preventDefault();
     let firstInvalid = null;
     document.querySelectorAll('.field').forEach(f => f.classList.remove('has-error'));
-
+ 
     getRequiredFields().forEach(fieldEl => {
       if (!isFieldFilled(fieldEl)) {
         fieldEl.classList.add('has-error');
         if (!firstInvalid) firstInvalid = fieldEl;
       }
     });
-
+ 
     if (firstInvalid) {
       errorSummary.classList.add('show');
       firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
       return;
     }
     errorSummary.classList.remove('show');
-
+ 
+    if (SCRIPT_URL.indexOf('PASTE_YOUR') === 0) {
+      alert('This form is not yet connected to Google Sheets.\n\nOpen the HTML file, find SCRIPT_URL near the bottom, and paste in your deployed Apps Script Web App URL (see the setup instructions).');
+      return;
+    }
+ 
     submitBtn.disabled = true;
     submitBtn.textContent = 'Submitting…';
-
+ 
     const data = new FormData(form);
     const categories = data.getAll('issueCategories').join(', ');
-
+ 
+    const gsForm = document.getElementById('gsForm');
+    gsForm.action = SCRIPT_URL;
+    gsForm.innerHTML = '';
+ 
     const fieldsToSend = {
       weekEnding: data.get('weekEnding') || '',
       courseName: data.get('courseName') || '',
@@ -594,21 +607,24 @@
       confidence: data.get('confidence') || '',
       additionalComments: data.get('additionalComments') || ''
     };
-
-    google.script.run
-      .withSuccessHandler(function() {
-        form.style.display = 'none';
-        document.getElementById('thankyou').classList.add('show');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      })
-      .withFailureHandler(function(err) {
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Submit Feedback';
-        alert('Something went wrong submitting your feedback. Please try again.\n\n' + (err && err.message ? err.message : err));
-      })
-      .submitFeedback(fieldsToSend);
+ 
+    Object.keys(fieldsToSend).forEach(key => {
+      const input = document.createElement('input');
+      input.type = 'hidden';
+      input.name = key;
+      input.value = fieldsToSend[key];
+      gsForm.appendChild(input);
+    });
+ 
+    document.getElementById('hidden_iframe').onload = function() {
+      form.style.display = 'none';
+      document.getElementById('thankyou').classList.add('show');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+ 
+    gsForm.submit();
   });
 </script>
-
+ 
 </body>
 </html>
